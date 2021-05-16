@@ -17,10 +17,14 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [3.7, 3.8, 3.9]
+        omp_num_threads: [1, 2]
+        config:
+          - {cc: gcc, cxx: g++}
+          - {cc: clang, cxx: clang++}
     env:
-      CC: gcc
-      CXX: g++
-      OMP_NUM_THREADS: 1
+      CC: matrix.config.cc
+      CXX: matrix.config.cxx
+      OMP_NUM_THREADS: matrix.omp_num_threads
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
