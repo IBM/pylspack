@@ -42,3 +42,9 @@ jobs:
     - name: Test with pytest
       run: |
         export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:"$(pip show pylspack | grep 'Location:' | awk '{print $2}')/pylspack/" && python3 -m pytest -svvv test
+    - name: Typing checks with mypy
+      run: |
+        mypy .
+    - name: Style check with yapf
+      run: |
+        yapf --quiet --style "{based_on_style: pep8, blank_line_before_nested_class_or_def: true, indent_dictionary_value: true, dedent_closing_brackets: true, column_limit: 99}" --recursive .
