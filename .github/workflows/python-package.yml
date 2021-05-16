@@ -66,9 +66,9 @@ jobs:
             cxx: clang++
             omp_num_threads: 2
     env:
-      CC: matrix.cc
-      CXX: matrix.cxx
-      OMP_NUM_THREADS: matrix.omp_num_threads
+      CC: ${{ matrix.cc }}
+      CXX: ${{ matrix.cxx }}
+      OMP_NUM_THREADS: ${{ matrix.omp_num_threads }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
