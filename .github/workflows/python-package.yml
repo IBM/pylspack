@@ -16,11 +16,55 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.7, 3.8, 3.9]
-        omp_num_threads: [1, 2]
-        config:
-          - {cc: gcc, cxx: g++}
-          - {cc: clang, cxx: clang++}
+        include:
+          - python-version: 3.7
+            cc: gcc
+            cxx: g++
+            omp_num_threads: 1
+          - python-version: 3.7
+            cc: gcc
+            cxx: g++
+            omp_num_threads: 2
+          - python-version: 3.8
+            cc: gcc
+            cxx: g++
+            omp_num_threads: 1
+          - python-version: 3.8
+            cc: gcc
+            cxx: g++
+            omp_num_threads: 2
+          - python-version: 3.9
+            cc: gcc
+            cxx: g++
+            omp_num_threads: 1
+          - python-version: 3.9
+            cc: gcc
+            cxx: g++
+            omp_num_threads: 2
+          - python-version: 3.7
+            cc: clang
+            cxx: clang++
+            omp_num_threads: 1
+          - python-version: 3.7
+            cc: clang
+            cxx: clang++
+            omp_num_threads: 2
+          - python-version: 3.8
+            cc: clang
+            cxx: clang++
+            omp_num_threads: 1
+          - python-version: 3.8
+            cc: clang
+            cxx: clang++
+            omp_num_threads: 2
+          - python-version: 3.9
+            cc: clang
+            cxx: clang++
+            omp_num_threads: 1
+          - python-version: 3.9
+            cc: clang
+            cxx: clang++
+            omp_num_threads: 2
     env:
       CC: matrix.cc
       CXX: matrix.cxx
