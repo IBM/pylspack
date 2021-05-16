@@ -22,8 +22,8 @@ jobs:
           - {cc: gcc, cxx: g++}
           - {cc: clang, cxx: clang++}
     env:
-      CC: matrix.config.cc
-      CXX: matrix.config.cxx
+      CC: matrix.cc
+      CXX: matrix.cxx
       OMP_NUM_THREADS: matrix.omp_num_threads
     steps:
     - uses: actions/checkout@v2
