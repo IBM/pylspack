@@ -3,8 +3,8 @@ This project was developed as part of the experimental evaluation of the algorit
 described in the respective publication. ***There is no plan for further development***. Nevertheless, if you would like to address an issue, please first
 contact the maintainers via e-mail. For a list of the maintainers, see the [MAINTAINERS.md](MAINTAINERS.md) page.
 
-Contributions, if any, will be handled by first creating **FIXME** [an issue](https://github.com/ibm/repo-template/issues),
-and then opening a respective **FIXME** [pull request](https://github.com/ibm/repo-template/pulls).
+Contributions, if any, will be handled by first creating [an issue](https://github.com/IBM/pylspack/issues),
+and then opening a respective [pull request](https://github.com/IBM/pylspack/pulls).
 
 **Note: We appreciate your effort, and want to avoid a situation where a contribution
 requires extensive rework (by you or by us), sits in backlog for a long time, or
