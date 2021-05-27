@@ -42,7 +42,7 @@ Fuction | Description
 `gemm(alpha, A, B, beta, C)` | Simplified version of standard BLAS dgemm. **NOTE**: this method was implemented only to be used internally by the higher level methods, to avoid external dependencies in the C++ API. It is highly recommended to use the scipy.linalg.blas.dgemm instead, which is faster and more flexible!
 `scale(B, alpha)` | Compute B <- B * alpha for some matrix B and some scalar alpha (B is updated inplace).
 `set_randn(B)` | Fill the elements of a matrix B with random elements from the standard normal distribution (B is updated inplace).
-`set_value(B)` | Fill the elements of a matrix B with fixed given value (B is updated inplace).
+`set_value(B, value)` | Fill the elements of a matrix B with fixed given float value (B is updated inplace).
 
 #### High level algorithms: `pylspack.leverage_scores`
 Function | Description
