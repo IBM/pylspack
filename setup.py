@@ -47,11 +47,12 @@ def read_readme(fname):
 
 setup(
     name='pylspack',
-    version='0.1.0',
+    version='0.1.1',
     description='Python package for leverage scores computations.',
     author='Sobczyk Aleksandros',
     author_email='obc@zurich.ibm.com',
     license='MIT',
+    url='https://githib.com/IBM/pylspack'
     long_description=read_readme('README.md'),
     long_description_content_type='text/markdown',
     py_modules=['pylspack.linalg_kernels', 'pylspack.leverage_scores'],
