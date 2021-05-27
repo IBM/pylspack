@@ -53,6 +53,7 @@ setup(
     author_email='obc@zurich.ibm.com',
     license='MIT',
     long_description=read_readme('README.md'),
+    long_description_content_type='text/markdown',
     py_modules=['pylspack.linalg_kernels', 'pylspack.leverage_scores'],
     install_requires=['scipy>=1.5.0', 'numpy>=1.19.0'],
     ext_modules=[CMakeMakeExtension(name='src')],
