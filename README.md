@@ -68,7 +68,7 @@ python3 -m venv venv
 source venv/bin/activate
 # Optional step to add more optimization flags:
 # export PYLSPACK_ADDITIONAL_CMAKE_CXX_FLAGS="-march=native "
-pip install .
+pip install git+https://github.com/IBM/pylspack
 ```
 
 ## Testing
