@@ -47,7 +47,7 @@ def read_readme(fname):
 
 setup(
     name='pylspack',
-    version='0.1.1',
+    version='1.0.0',
     description='Python package for leverage scores computations.',
     author='Sobczyk Aleksandros',
     author_email='obc@zurich.ibm.com',
