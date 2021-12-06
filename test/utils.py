@@ -10,7 +10,10 @@ B_shapes_generic = [(1, 1), (3, 1), (1, 3), (3, 3), (5, 5), (17, 17), (174, 631)
 A_shapes_generic.extend([(8, 8), (64, 64), (128, 128)])
 B_shapes_generic.extend([(8, 8), (64, 64), (128, 128)])
 A_shapes_generic.extend(
-    [np.random.randint(low=min_size, high=max_size, size=2) for k in range(10)]
+    [
+        tuple(np.random.randint(low=min_size, high=max_size, size=2))  # type: ignore
+        for k in range(10)
+    ]
 )
 B_shapes_generic.extend(
     [

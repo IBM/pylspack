@@ -16,6 +16,23 @@ The basic matrix algorithms of this package are developed in C++, using OpenMP f
 As already noted, the implementation is designed for existing data structures of SciPy and Numpy and therefore the entire codebase is **only tested** and **should only be used** via the python wrappers.
 The C++ API **can** be used as a standalone package, but it has not been tested.
 
+### Citation
+The corresponding publication https://doi.org/10.1137/20m1314471 can be cited as follows:
+```
+@article{Sobczyk2021,
+  doi = {10.1137/20m1314471},
+  url = {https://doi.org/10.1137/20m1314471},
+  year = {2021},
+  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})},
+  volume = {42},
+  number = {3},
+  pages = {1199--1228},
+  author = {Aleksandros Sobczyk and Efstratios Gallopoulos},
+  title = {Estimating Leverage Scores via Rank Revealing Methods and Randomization},
+  journal = {{SIAM} Journal on Matrix Analysis and Applications}
+}
+```
+
 ## Usage
 
 A simple usage example to compute the leverage scores of a sparse `csr_matrix` with the `ls_via_inv_gram` method.

@@ -8,7 +8,12 @@ from .utils import (
 )
 
 A_shapes = [(1, 1), (3, 1), (3, 3), (17, 5), (237, 174), (237, 237)]
-A_shapes.extend([np.random.randint(low=min_size, high=max_size, size=2) for k in range(10)])
+A_shapes.extend(
+    [
+        tuple(np.random.randint(low=min_size, high=max_size, size=2))  # type: ignore
+        for k in range(10)
+    ]
+)
 
 
 def execute_and_check(alpha: float, A: csr_matrix, beta: float, C: np.ndarray):

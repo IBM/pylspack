@@ -80,6 +80,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
         python -m pip install .
+        rm -rf ./build/
         if [ -f test_requirements.txt ]; then pip install -r test_requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -87,12 +88,12 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:"$(pip show pylspack | grep 'Location:' | awk '{print $2}')/pylspack/" && python3 -m pytest -svvv test
     - name: Typing checks with mypy
       run: |
         mypy .
     - name: Style check with yapf
       run: |
         yapf --quiet --style "{based_on_style: pep8, blank_line_before_nested_class_or_def: true, indent_dictionary_value: true, dedent_closing_brackets: true, column_limit: 99}" --recursive .
+    - name: Test with pytest
+      run: |
+        export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:"$(pip show pylspack | grep 'Location:' | awk '{print $2}')/pylspack/" && python3 -m pytest -svvv test
