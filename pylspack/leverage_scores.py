@@ -32,7 +32,7 @@ def get_rank_from_vector(S: np.ndarray, rcond: float) -> int:
     if not np.any(S):
         return 0  # if all elements are zero, the rank is zero
     if not np.all(S[:-1] >= S[1:]):
-        raise ValueError(f'Given vector to determine the rank must be sorted.')
+        raise ValueError('Given vector to determine the rank must be sorted.')
     if rcond < 0 or rcond >= 1:
         raise ValueError(f'Given value for rcond={rcond} is invalid. Must be 0 <= rcond < 1.')
 
