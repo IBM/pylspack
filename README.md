@@ -17,7 +17,7 @@ As already noted, the implementation is designed for existing data structures of
 The C++ API **can** be used as a standalone package, but it has not been tested.
 
 ### Citation
-If you use this code, consider citing the corresponding publication https://doi.org/10.1137/20m1314471 :
+The corresponding publication https://doi.org/10.1137/20m1314471 can be cited as follows:
 ```
 @article{Sobczyk2021,
   doi = {10.1137/20m1314471},
