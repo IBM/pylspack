@@ -6,7 +6,7 @@ from pylspack.leverage_scores import (
     sample_columns, ls_via_inv_gram, ls_via_sketched_svd, ls_hrn_exact, ls_hrn_approx,
     get_rank_from_vector
 )
-from .utils import eps_machine
+from utils import eps_machine
 
 density = [0.1, 0.3, 1]
 matrices = [

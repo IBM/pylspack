@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 from pylspack.linalg_kernels import set_randn
-from .utils import A_shapes_generic as A_shapes
+from utils import A_shapes_generic as A_shapes
 
 
 def execute_and_check(A: np.ndarray):

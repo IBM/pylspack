@@ -1,11 +1,11 @@
 import numpy as np
 import pytest
 from pylspack.linalg_kernels import rmsqn
-from .utils import (
+from utils import (
     eps_machine, alpha_beta_pairs_generic, get_random_matrices, set_arrays_elements_to_value
 )
-from .utils import A_shapes_generic as A_shapes
-from .utils import B_shapes_generic as B_shapes
+from utils import A_shapes_generic as A_shapes
+from utils import B_shapes_generic as B_shapes
 
 
 def execute_and_check(alpha: float, A: np.ndarray, B: np.ndarray, beta: float, C: np.ndarray):

@@ -17,19 +17,29 @@ As already noted, the implementation is designed for existing data structures of
 The C++ API **can** be used as a standalone package, but it has not been tested.
 
 ### Citation
-The corresponding publication https://doi.org/10.1137/20m1314471 can be cited as follows:
+If you use this software in academic work, please consider citing the corresponding publications:
+- https://doi.org/10.1137/20m1314471
 ```
-@article{Sobczyk2021,
-  doi = {10.1137/20m1314471},
-  url = {https://doi.org/10.1137/20m1314471},
-  year = {2021},
-  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})},
-  volume = {42},
-  number = {3},
-  pages = {1199--1228},
-  author = {Aleksandros Sobczyk and Efstratios Gallopoulos},
-  title = {Estimating Leverage Scores via Rank Revealing Methods and Randomization},
-  journal = {{SIAM} Journal on Matrix Analysis and Applications}
+@article{sobczyk2021estimating,
+  title={Estimating leverage scores via rank revealing methods and randomization},
+  author={Sobczyk, Aleksandros and Gallopoulos, Efstratios},
+  journal={SIAM Journal on Matrix Analysis and Applications},
+  volume={42},
+  number={3},
+  pages={1199--1228},
+  year={2021},
+  doi={10.1137/20m1314471},
+  url={https://doi.org/10.1137/20m1314471},
+  publisher={SIAM}
+}
+```
+- https://doi.org/10.48550/arxiv.2203.02798
+```
+@article{sobczyk2022pylspack,
+  title={pylspack: Parallel algorithms and data structures for sketching, column subset selection, regression and leverage scores},
+  author={Sobczyk, Aleksandros and Gallopoulos, Efstratios},
+  journal={arXiv preprint arXiv:2203.02798},
+  year={2022}
 }
 ```
 
@@ -92,11 +102,12 @@ pip install git+https://github.com/IBM/pylspack
 
 To run the tests:
 ```bash
+python3 -m pip install -r test_requirements.txt
+cd test
+python3 -m pytest -svvv .
 # If you get an error about liblinalg_kernels.so, do the following:
 # PYLSPACK_LOCATION="$(pip show pylspack | grep Location: | awk '{print $2}')/pylspack/"
 # export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PYLSPACK_LOCATION}
-pip install -r test_requirements.txt
-pytest -svvv test
 ```
 
 ## Contributing

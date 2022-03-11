@@ -2,11 +2,11 @@ import numpy as np
 from scipy.sparse import csr_matrix
 import pytest
 from pylspack.linalg_kernels import csrsqn
-from .utils import (
+from utils import (
     eps_machine, alpha_beta_pairs_generic, get_random_matrices, set_arrays_elements_to_value
 )
-from .utils import A_shapes_generic as A_shapes
-from .utils import B_shapes_generic as B_shapes
+from utils import A_shapes_generic as A_shapes
+from utils import B_shapes_generic as B_shapes
 
 
 def execute_and_check(alpha: float, A: csr_matrix, B: np.ndarray, beta: float, C: np.ndarray):

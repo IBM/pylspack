@@ -7,13 +7,18 @@ from scipy.linalg import blas
 from scipy.sparse import csr_matrix
 
 libdir = os.path.dirname(os.path.realpath(__file__))
-try:
-    libfile = glob.glob('{}/liblinalg_kernels*.so'.format(libdir))[0]
-    ext_lib = CDLL(os.path.join(libdir, libfile))
-except Exception as e:
-    print('Warning: could not find {}/liblinalg_kernels*.so'.format(libdir))
-    print('Caught exception: {}. Trying to load from LD_LIBRARY_PATH...'.format(e))
-    ext_lib = CDLL('liblinalg_kernels.so')
+libfile = glob.glob(f'{libdir}/liblinalg_kernels*')
+if libfile:
+    ext_lib = CDLL(os.path.join(libdir, libfile[0]))
+else:
+    print(f'Warning: could not find {libdir}/liblinalg_kernels*')
+    try:
+        print('Trying to fild liblinalg_kernels.so from LD_LIBRARY_PATH...')
+        ext_lib = CDLL('liblinalg_kernels.so')
+    except Exception:
+        print('Trying to fild liblinalg_kernels.dylib from LD_LIBRARY_PATH...')
+        ext_lib = CDLL('liblinalg_kernels.dylib')
+
 
 # arg types
 ext_lib.csrcgs.argtypes = [

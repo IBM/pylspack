@@ -186,6 +186,7 @@ extern "C" {
     double *_C;
     int i, j, k, up, lo;
 
+    double *G = new double[m];
     #pragma omp parallel private(_C, i, j, k, up, lo)
     {
       double A_ki;
@@ -197,11 +198,11 @@ extern "C" {
       row_limits.second = block_size * ( thread_id + 1 );
       row_limits.second = std::min( row_limits.second, m );
       const int n_rows = row_limits.second - row_limits.first;
-      double *_G = new double[n_rows];
       std::random_device rd{};
       std::mt19937_64 gen{rd()};
       std::normal_distribution<double> dist;
 
+      double *_G = &( G[ row_limits.first ] );
       for ( k = 0; k < n; ++k ) {
         lo = A_indptr[k];
         up = A_indptr[k + 1];
@@ -224,9 +225,9 @@ extern "C" {
           }
         }
       }
-
-      delete[] _G;
     }
+
+    delete[] G;
     double scale_factor = static_cast<double>( 1 ) / sqrt( static_cast<double>( m ) );
     scale( m, d, C, scale_factor );
   }
