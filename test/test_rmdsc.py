@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 from pylspack.linalg_kernels import rmdsc
-from .utils import eps_machine, min_size, max_size, set_arrays_elements_to_value
+from utils import eps_machine, min_size, max_size, set_arrays_elements_to_value
 
 B_shapes = [(1, 1), (3, 1), (1, 3), (3, 3), (17, 5), (17, 17), (237, 631), (631, 237), (237, 237)]
 D_shapes = [(1, 1), (1, 1), (3, 3), (3, 3), (5, 5), (17, 17), (631, 631), (237, 237), (237, 237)]

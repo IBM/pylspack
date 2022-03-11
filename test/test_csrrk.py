@@ -2,7 +2,7 @@ import numpy as np
 from scipy.sparse import csr_matrix
 import pytest
 from pylspack.linalg_kernels import csrrk
-from .utils import (
+from utils import (
     eps_machine, min_size, max_size, alpha_beta_pairs_generic, get_random_matrices,
     set_arrays_elements_to_value
 )

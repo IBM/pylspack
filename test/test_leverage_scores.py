@@ -6,7 +6,7 @@ from pylspack.leverage_scores import (
     sample_columns, ls_via_inv_gram, ls_via_sketched_svd, ls_hrn_exact, ls_hrn_approx,
     get_rank_from_vector
 )
-from .utils import eps_machine
+from utils import eps_machine
 
 density = [0.1, 0.3, 1]
 matrices = [
@@ -19,7 +19,7 @@ matrices = [
 def test_get_rank_from_vector():
     s = np.zeros((10, ))
     assert get_rank_from_vector(s, rcond=0.5) == 0
-    s = np.arange(10, 0, -1)
+    s = np.arange(10, 0, -1)  # type: ignore
     assert get_rank_from_vector(s, rcond=0.65) == 4
     assert get_rank_from_vector(s, rcond=0.05) == 10
     assert get_rank_from_vector(s, rcond=0) == 10

@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 from pylspack.linalg_kernels import scale
-from .utils import eps_machine
-from .utils import A_shapes_generic as A_shapes
+from utils import eps_machine
+from utils import A_shapes_generic as A_shapes
 
 
 def execute_and_check(A: np.ndarray, alpha: float):
