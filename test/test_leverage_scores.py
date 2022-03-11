@@ -19,7 +19,7 @@ matrices = [
 def test_get_rank_from_vector():
     s = np.zeros((10, ))
     assert get_rank_from_vector(s, rcond=0.5) == 0
-    s = np.arange(10, 0, -1)
+    s = np.arange(10, 0, -1)  # type: ignore
     assert get_rank_from_vector(s, rcond=0.65) == 4
     assert get_rank_from_vector(s, rcond=0.05) == 10
     assert get_rank_from_vector(s, rcond=0) == 10
