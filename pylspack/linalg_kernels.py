@@ -19,7 +19,6 @@ else:
         print('Trying to fild liblinalg_kernels.dylib from LD_LIBRARY_PATH...')
         ext_lib = CDLL('liblinalg_kernels.dylib')
 
-
 # arg types
 ext_lib.csrcgs.argtypes = [
     c_int, c_int, c_int, c_int, c_int, c_void_p, c_void_p, c_void_p, c_void_p
