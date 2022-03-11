@@ -52,12 +52,12 @@ def assert_shape(a: int, b: int) -> None:
 
 
 def assert_dtype(A: np.ndarray, dtype: str) -> None:
-    if A.dtype != dtype:
+    if A.dtype != dtype:  # type: ignore
         raise TypeError('unsupported dtype: {}.'.format(A.dtype))
 
 
 def assert_contiguous_type(A: np.ndarray, contiguous_type: str) -> None:
-    if A.flags[contiguous_type] is False:
+    if A.flags[contiguous_type] is False:  # type: ignore
         raise TypeError('array is not {} as expected.'.format(contiguous_type))
 
 
