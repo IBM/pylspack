@@ -33,13 +33,17 @@ If you use this software in academic work, please consider citing the correspond
   publisher={SIAM}
 }
 ```
-- https://doi.org/10.48550/arxiv.2203.02798
+- https://doi.org/10.1145/3555370
 ```
 @article{sobczyk2022pylspack,
-  title={pylspack: Parallel algorithms and data structures for sketching, column subset selection, regression and leverage scores},
+  title={pylspack: Parallel Algorithms and Data Structures for Sketching, Column Subset Selection, Regression, and Leverage Scores},
   author={Sobczyk, Aleksandros and Gallopoulos, Efstratios},
-  journal={arXiv preprint arXiv:2203.02798},
-  year={2022}
+  journal={ACM Transactions on Mathematical Software},
+  volume={48},
+  number={4},
+  pages={1--27},
+  year={2022},
+  publisher={ACM New York, NY}
 }
 ```
 
